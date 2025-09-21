@@ -7,9 +7,11 @@
   "scripts": {
     "start": "node ./dist/index.js",
     "server": "nodemon ./dist/index.js",
-    "dev": "concurrently \"tsc -w\" \"nodemon ./dist/index.js\"",
+    "dev": "concurrently \"tsc -w\" \"nodemon ./dist/index.js\" \"npm run watch-views\"",
     "watch": "tsc -w",
-    "build": "tsc"
+    "build": "tsc && npm run copy-files",
+    "copy-files": "copyfiles -u 1 \"src/views/**/*\" dist/",
+    "watch-views": "nodemon --watch src/views -e ejs -x \"npm run copy-files\""
   },
   "keywords": [],
   "author": "",
@@ -25,6 +27,7 @@
     "@prisma/client": "^6.16.2",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
+    "copyfiles": "^2.4.1",
     "nodemon": "^3.1.10",
     "prisma": "^6.16.2",
     "typescript": "^5.9.2"
