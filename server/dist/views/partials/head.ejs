@@ -1,0 +1,192 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title><%= title || 'Clash - Discover Better Clash Royale Decks' %></title>
+<style>
+  /* Reset and base styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #333333;
+    background-color: #f8fafc;
+  }
+
+  .email-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+  }
+
+  .logo {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .tagline {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-bottom: 0;
+  }
+
+  .content {
+    padding: 40px 30px;
+  }
+
+  .welcome-message {
+    font-size: 24px;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .description {
+    font-size: 16px;
+    color: #4a5568;
+    margin-bottom: 30px;
+    text-align: center;
+    line-height: 1.7;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+  }
+
+  .feature-card {
+    background: #f7fafc;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+  }
+
+  .feature-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 8px;
+  }
+
+  .feature-description {
+    font-size: 14px;
+    color: #4a5568;
+    line-height: 1.5;
+  }
+
+  .cta-section {
+    text-align: center;
+    margin: 40px 0;
+    padding: 30px;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border-radius: 8px;
+    color: white;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: white;
+    color: #667eea;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 15px;
+    transition: transform 0.2s ease;
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+  }
+
+  .footer {
+    background-color: #2d3748;
+    color: #a0aec0;
+    padding: 30px;
+    text-align: center;
+  }
+
+  .footer-links {
+    margin-bottom: 20px;
+  }
+
+  .footer-link {
+    color: #81c784;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 14px;
+  }
+
+  .footer-link:hover {
+    text-decoration: underline;
+  }
+
+  .social-icons {
+    margin: 20px 0;
+  }
+
+  .social-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+    background: #4a5568;
+    border-radius: 50%;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+
+  .copyright {
+    font-size: 12px;
+    color: #718096;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .email-container {
+      margin: 10px;
+      border-radius: 8px;
+    }
+
+    .header,
+    .content {
+      padding: 30px 20px;
+    }
+
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .logo {
+      font-size: 28px;
+    }
+
+    .welcome-message {
+      font-size: 20px;
+    }
+  }
+</style>

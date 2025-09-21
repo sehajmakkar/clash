@@ -1,12 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome</title>
-</head>
-<body>
-  <h1>Welcome to Clash <%= name %>!</h1>
-  <p>We're glad to have you here.</p>
-</body>
+  <head>
+    <%- include('../partials/head', { title: 'Welcome to Clash!' }) %>
+  </head>
+  <body>
+    <div class="email-container">
+      <!-- Header Section -->
+      <div class="header">
+        <div class="logo">⚔️ CLASH</div>
+        <div class="tagline">Discover Better Clash Royale Decks</div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="content">
+        <h1 class="welcome-message">Welcome to Clash, <%= name %>! 🎉</h1>
+
+        <p class="description">
+          We're thrilled to have you join our community of Clash Royale
+          enthusiasts! Get ready to discover, share, and vote on the most
+          effective deck strategies with real-time community feedback.
+        </p>
+
+        <!-- Features Grid -->
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-title">🏆 Discover Top Decks</div>
+            <div class="feature-description">
+              Browse through community-tested deck combinations and find the
+              perfect strategy for your playstyle.
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-title">📊 Real-time Voting</div>
+            <div class="feature-description">
+              Vote on decks and see live results with our real-time socket
+              connections. Your opinion matters!
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-title">💬 Community Comments</div>
+            <div class="feature-description">
+              Share your experiences, tips, and strategies with fellow players
+              through our comment system.
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-title">📱 Shareable Links</div>
+            <div class="feature-description">
+              Create and share your own clash decks with unique dashboard links
+              for public voting.
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-title">📸 Deck Photos</div>
+            <div class="feature-description">
+              Upload screenshots of your deck combinations to showcase your
+              strategies visually.
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-title">⚡ Live Updates</div>
+            <div class="feature-description">
+              Experience real-time updates on votes and comments without
+              refreshing the page.
+            </div>
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="cta-section">
+          <h2 style="margin: 0 0 10px 0; font-size: 22px">
+            Ready to Start Your Journey?
+          </h2>
+          <p style="margin: 0 0 20px 0; opacity: 0.9">
+            Jump into your personalized dashboard and start exploring the best
+            Clash Royale decks!
+          </p>
+          <a class="cta-button"> Go to Dashboard → </a>
+        </div>
+
+        <!-- Getting Started Tips -->
+        <div
+          style="
+            background: #edf2f7;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+          "
+        >
+          <h3 style="color: #2d3748; margin-bottom: 15px; font-size: 18px">
+            🚀 Quick Start Tips:
+          </h3>
+          <ul style="color: #4a5568; padding-left: 20px; line-height: 1.8">
+            <li>
+              Complete your profile to get personalized deck recommendations
+            </li>
+            <li>
+              Upload your first deck with a photo to start gathering votes
+            </li>
+            <li>Explore trending decks in the community dashboard</li>
+            <li>Join discussions by commenting on decks that interest you</li>
+            <li>Share your deck links with friends to get their feedback</li>
+          </ul>
+        </div>
+
+        <!-- Security Note -->
+        <div
+          style="
+            margin-top: 30px;
+            padding: 20px;
+            background: #fef5e7;
+            border-left: 4px solid #f6ad55;
+            border-radius: 4px;
+          "
+        >
+          <h4 style="color: #744210; margin-bottom: 8px; font-size: 16px">
+            🔐 Account Security
+          </h4>
+          <p
+            style="color: #744210; font-size: 14px; margin: 0; line-height: 1.6"
+          >
+            Your account is secured with email verification. If you didn't
+            create this account, please ignore this email or contact our support
+            team.
+          </p>
+        </div>
+
+        <!-- Contact Information -->
+        <div
+          style="
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #e2e8f0;
+          "
+        >
+          <p style="color: #4a5568; font-size: 14px; margin-bottom: 10px">
+            Questions? We're here to help!
+          </p>
+          <p style="color: #4a5568; font-size: 14px">
+            Email us at
+            <a
+              href="mailto:support@clash.com"
+              style="color: #667eea; text-decoration: none"
+              >support@clash.com</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
