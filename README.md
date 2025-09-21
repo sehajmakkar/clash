@@ -1,5 +1,6 @@
 # clash - discover better people using votes and comments.
 revising everything from scratch - weeknds
+
 Frontend Backend ORM Database Sockets
 Nextjs, Nodejs, Redis Queues, SocketIO, Postgresql, Prisma, Typescript
 
