@@ -2,8 +2,10 @@ import express from "express";
 import type { Application, Request, Response } from "express";
 
 import "dotenv/config";
+import ejs from "ejs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { sendEmail } from "./config/mail.js";
 
 const app: Application = express();
 const PORT = process.env.PORT || 5000;
@@ -19,8 +21,10 @@ app.use(express.urlencoded({ extended: false }));
 app.set("view engine", "ejs");
 app.set("views", path.resolve(__dirname, "./views"));
 
-app.get('/', (req: Request, res: Response) => {
-    res.render("welcome");
+app.get('/', async (req: Request, res: Response) => {
+    const html = await ejs.renderFile(__dirname + `/views/emails/welcome.ejs`, {name: "Sehaj"});
+    await sendEmail("codewithsehaj@gmail.com", "Testing", html);
+    return res.json({message: "Email Sent"});
 });
 
 app.listen(PORT, () => {
