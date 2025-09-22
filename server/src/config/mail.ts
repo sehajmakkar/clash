@@ -10,7 +10,6 @@ export const transporter = nodemailer.createTransport({
   },
 });
 
-// Wrap in an async IIFE so we can use await.
  export const sendEmail = async (to: string, subject: string, body: string) => {
   const info = await transporter.sendMail({
     from: process.env.FROM_EMAIL || '"Clash Support" <sehajmakkar007@gmail.com>',

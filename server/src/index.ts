@@ -7,6 +7,10 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { sendEmail } from "./config/mail.js";
 
+// Queues
+import "./jobs/index.js"; 
+import { emailQueue, emailQueueName } from "./jobs/EmailJob.js";
+
 const app: Application = express();
 const PORT = process.env.PORT || 5000;
 
@@ -23,9 +27,17 @@ app.set("views", path.resolve(__dirname, "./views"));
 
 app.get('/', async (req: Request, res: Response) => {
     const html = await ejs.renderFile(__dirname + `/views/emails/welcome.ejs`, {name: "Sehaj"});
-    await sendEmail("codewithsehaj@gmail.com", "Testing", html);
+    // await sendEmail("codewithsehaj@gmail.com", "Testing", html);
+
+    await emailQueue.add(emailQueueName, {
+        to: "codewithsehaj@gmail.com",
+        subject: "Testing",
+        body: html,
+    })
     return res.json({message: "Email Sent"});
 });
+
+
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
